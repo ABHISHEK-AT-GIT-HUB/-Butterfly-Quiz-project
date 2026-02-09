@@ -23,7 +23,11 @@ const Quiz = () => {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setShowScore(true);
+      if (isCorrect && score + 1 === questions.length) {
+        setTimeout(() => setShowScore(true), 1000);
+      } else {
+        setShowScore(true);
+      }
     }
   };
 
@@ -154,7 +158,9 @@ const Quiz = () => {
             }}
           >
             <img
-              src={growthSteps[growthStage] || growthSteps[0]}
+              src={
+                growthSteps[growthStage] || growthSteps[growthSteps.length - 1]
+              }
               alt="Growth"
               style={{
                 maxHeight: "100%",
