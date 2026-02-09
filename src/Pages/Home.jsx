@@ -1,6 +1,7 @@
 import React from "react";
 import MainSection from "../components/MainSection";
 import MidSection from "../components/MidSection";
+import PlaySection from "../components/PlaySection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         head="Welcome to test your knowledge"
         para="think answer and learn"
       />
+      <PlaySection />
     </div>
   );
 };
